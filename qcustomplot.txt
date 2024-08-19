@@ -1,0 +1,1069 @@
+Line 52: QPainter(),
+Line 56: // don't setRenderHint(QPainter::NonCosmeticDefautPen) here, because painter isn't active yet and
+Line 64: Like \ref begin, this method sets QPainter::NonCosmeticDefaultPen in Qt versions before Qt5.
+Line 67: QPainter(device),
+Line 71: #if QT_VERSION < QT_VERSION_CHECK(5, 0, 0) // before Qt5, default pens used to be cosmetic if NonCosmeticDefaultPen flag isn't set. So we set it to get consistency across Qt versions.
+Line 73: setRenderHint(QPainter::NonCosmeticDefaultPen);
+Line 89: QPainter::setPen(pen);
+Line 103: QPainter::setPen(color);
+Line 117: QPainter::setPen(penStyle);
+Line 133: QPainter::drawLine(line);
+Line 135: QPainter::drawLine(line.toLine());
+Line 146: setRenderHint(QPainter::Antialiasing, enabled);
+Line 170: Sets the QPainter::NonCosmeticDefaultPen in Qt versions before Qt5 after beginning painting on \a
+Line 182: bool result = QPainter::begin(device);
+Line 183: #if QT_VERSION < QT_VERSION_CHECK(5, 0, 0) // before Qt5, default pens used to be cosmetic if NonCosmeticDefaultPen flag isn't set. So we set it to get consistency across Qt versions.
+Line 185: setRenderHint(QPainter::NonCosmeticDefaultPen);
+Line 214: QPainter::save();
+Line 231: QPainter::restore();
+Line 244: QPainter::setPen(p);
+Line 335: mPen(Qt::NoPen),
+Line 336: mBrush(Qt::NoBrush),
+Line 351: mPen(Qt::NoPen),
+Line 352: mBrush(Qt::NoBrush),
+Line 364: mPen(QPen(color)),
+Line 365: mBrush(Qt::NoBrush),
+Line 377: mPen(QPen(color)),
+Line 378: mBrush(QBrush(fill)),
+Line 387: \warning In some cases it might be tempting to directly use a pen style like <tt>Qt::NoPen</tt> as \a pen
+Line 388: and a color like <tt>Qt::blue</tt> as \a brush. Notice however, that the corresponding call\n
+Line 391: <tt>Qt::NoPen</tt> for a QColor and use the
+Line 394: this, be more explicit with the parameter types. For example, use <tt>QBrush(Qt::blue)</tt>
+Line 395: instead of just <tt>Qt::blue</tt>, to clearly point out to the compiler that this constructor is
+Line 403: mPenDefined(pen.style() != Qt::NoPen)
+Line 414: mPen(Qt::NoPen),
+Line 415: mBrush(Qt::NoBrush),
+Line 436: mPenDefined(pen.style() != Qt::NoPen)
+Line 467: a call to this function, even if \a pen is <tt>Qt::NoPen</tt>.
+Line 551: painter->drawLine(QPointF(x, y), QPointF(x+0.0001, y));
+Line 556: painter->drawLine(QLineF(x-w, y-w, x+w, y+w));
+Line 557: painter->drawLine(QLineF(x-w, y+w, x+w, y-w));
+Line 562: painter->drawLine(QLineF(x-w,   y, x+w,   y));
+Line 563: painter->drawLine(QLineF(  x, y+w,   x, y-w));
+Line 568: painter->drawEllipse(QPointF(x , y), w, w);
+Line 575: painter->drawEllipse(QPointF(x , y), w, w);
+Line 581: painter->drawRect(QRectF(x-w, y-w, mSize, mSize));
+Line 586: painter->drawLine(QLineF(x-w,   y,   x, y-w));
+Line 587: painter->drawLine(QLineF(  x, y-w, x+w,   y));
+Line 588: painter->drawLine(QLineF(x+w,   y,   x, y+w));
+Line 589: painter->drawLine(QLineF(  x, y+w, x-w,   y));
+Line 594: painter->drawLine(QLineF(x-w,   y, x+w,   y));
+Line 595: painter->drawLine(QLineF(  x, y+w,   x, y-w));
+Line 596: painter->drawLine(QLineF(x-w*0.707, y-w*0.707, x+w*0.707, y+w*0.707));
+Line 597: painter->drawLine(QLineF(x-w*0.707, y+w*0.707, x+w*0.707, y-w*0.707));
+Line 602: painter->drawLine(QLineF(x-w, y+0.755*w, x+w, y+0.755*w));
+Line 603: painter->drawLine(QLineF(x+w, y+0.755*w,   x, y-0.977*w));
+Line 604: painter->drawLine(QLineF(  x, y-0.977*w, x-w, y+0.755*w));
+Line 609: painter->drawLine(QLineF(x-w, y-0.755*w, x+w, y-0.755*w));
+Line 610: painter->drawLine(QLineF(x+w, y-0.755*w,   x, y+0.977*w));
+Line 611: painter->drawLine(QLineF(  x, y+0.977*w, x-w, y-0.755*w));
+Line 616: painter->drawLine(QLineF(x-w, y-w, x+w*0.95, y+w*0.95));
+Line 617: painter->drawLine(QLineF(x-w, y+w*0.95, x+w*0.95, y-w));
+Line 618: painter->drawRect(QRectF(x-w, y-w, mSize, mSize));
+Line 623: painter->drawLine(QLineF(x-w,   y, x+w*0.95,   y));
+Line 624: painter->drawLine(QLineF(  x, y+w,        x, y-w));
+Line 625: painter->drawRect(QRectF(x-w, y-w, mSize, mSize));
+Line 630: painter->drawLine(QLineF(x-w*0.707, y-w*0.707, x+w*0.670, y+w*0.670));
+Line 631: painter->drawLine(QLineF(x-w*0.707, y+w*0.670, x+w*0.670, y-w*0.707));
+Line 632: painter->drawEllipse(QPointF(x, y), w, w);
+Line 637: painter->drawLine(QLineF(x-w,   y, x+w,   y));
+Line 638: painter->drawLine(QLineF(  x, y+w,   x, y-w));
+Line 639: painter->drawEllipse(QPointF(x, y), w, w);
+Line 644: painter->drawLine(QLineF(x, y-w,         x,       y+w));
+Line 645: painter->drawLine(QLineF(x,   y, x-w*0.707, y+w*0.707));
+Line 646: painter->drawLine(QLineF(x,   y, x+w*0.707, y+w*0.707));
+Line 647: painter->drawEllipse(QPointF(x, y), w, w);
+Line 680: QCustomPlot::moveLayer, etc.). When replotting, QCustomPlot goes through the list of layers
+Line 689: the current layer (see QCustomPlot::setCurrentLayer). This means, all new plottables, items etc.
+Line 697: be, e.g. above "main", with QCustomPlot::addLayer. Then set the current layer with
+Line 698: QCustomPlot::setCurrentLayer to that new layer and finally create the objects normally. They will
+Line 705: QCustomPlot::moveLayer.
+Line 711: the deleted layer, see QCustomPlot::removeLayer.
+Line 725: accessed via \ref QCustomPlot::layer.
+Line 735: Normally you shouldn't directly instantiate layers, use \ref QCustomPlot::addLayer instead.
+Line 738: This check is only performed by \ref QCustomPlot::addLayer.
+Line 741: QObject(parentPlot),
+Line 756: // call QCustomPlot::removeLayer, which moves all layerables off this layer before deleting it.)
+Line 911: QCustomPlot::setCurrentLayer).
+Line 924: QObject(plot),
+Line 998: Note that antialiasing settings may be overridden by QCustomPlot::setAntialiasedElements and
+Line 999: QCustomPlot::setNotAntialiasedElements.
+Line 1056: \see selectEvent, deselectEvent, QCustomPlot::setInteractions
+Line 1060: Q_UNUSED(pos)
+Line 1061: Q_UNUSED(onlySelectable)
+Line 1062: Q_UNUSED(details)
+Line 1074: QObject::setParent(\a parentPlot) in addition to this function.
+Line 1149: localAntialiased value as well as the overrides \ref QCustomPlot::setAntialiasedElements and \ref
+Line 1150: QCustomPlot::setNotAntialiasedElements. Which override enum this function takes into account is
+Line 1181: Q_UNUSED(parentPlot)
+Line 1187: conjunction with \ref QCustomPlot::setInteractions to control which objects are selectable and
+Line 1193: \see QCustomPlot::setInteractions
+Line 1214: return QRect();
+Line 1225: QCustomPlot::setMultiSelectModifier). if \a additive is true, the selection state must be toggled
+Line 1247: Q_UNUSED(event)
+Line 1248: Q_UNUSED(additive)
+Line 1249: Q_UNUSED(details)
+Line 1250: Q_UNUSED(selectionStateChanged)
+Line 1256: interaction or a call to \ref QCustomPlot::deselectAll. Subclasses should react to it by
+Line 1267: Q_UNUSED(selectionStateChanged)
+Line 1539: QObject(parentPlot),
+Line 1841: setMinimumSize(QSize(width, height));
+Line 1864: setMaximumSize(QSize(width, height));
+Line 1979: Q_UNUSED(recursive)
+Line 1996: Q_UNUSED(details)
+Line 2001: if (QRectF(mOuterRect).contains(pos))
+Line 2153: #if QT_VERSION >= QT_VERSION_CHECK(4, 7, 0)
+Line 2242: sizeConstraintsChanged. If the parent is a QWidget (i.e. is the \ref QCustomPlot::plotLayout of
+Line 2243: QCustomPlot), calls QWidget::updateGeometry, so if the QCustomPlot widget is inside a Qt QLayout,
+Line 2817: mElements.at(row).at(col)->setOuterRect(QRect(xOffset, yOffset, colWidths.at(col), rowHeights.at(row)));
+Line 2877: #if QT_VERSION >= QT_VERSION_CHECK(4, 7, 0)
+Line 3131: return QRectF();
+Line 3152: \a alignment is an or combination of the following alignment flags: Qt::AlignLeft,
+Line 3153: Qt::AlignHCenter, Qt::AlighRight, Qt::AlignTop, Qt::AlignVCenter, Qt::AlignBottom. Any other
+Line 3198: insetRect = QRect(rect().x()+rect().width()*mInsetRect.at(i).x(),
+Line 3213: Qt::Alignment al = mInsetAlignment.at(i);
+Line 3214: if (al.testFlag(Qt::AlignLeft)) insetRect.moveLeft(rect().x());
+Line 3215: else if (al.testFlag(Qt::AlignRight)) insetRect.moveRight(rect().x()+rect().width());
+Line 3216: else insetRect.moveLeft(rect().x()+rect().width()*0.5-finalMinSize.width()*0.5); // default to Qt::AlignHCenter
+Line 3217: if (al.testFlag(Qt::AlignTop)) insetRect.moveTop(rect().y());
+Line 3218: else if (al.testFlag(Qt::AlignBottom)) insetRect.moveBottom(rect().y()+rect().height());
+Line 3219: else insetRect.moveTop(rect().y()+rect().height()*0.5-finalMinSize.height()*0.5); // default to Qt::AlignVCenter
+Line 3288: Q_UNUSED(details)
+Line 3307: \a alignment is an or combination of the following alignment flags: Qt::AlignLeft,
+Line 3308: Qt::AlignHCenter, Qt::AlighRight, Qt::AlignTop, Qt::AlignVCenter, Qt::AlignBottom. Any other
+Line 3322: mInsetRect.append(QRectF(0.6, 0.6, 0.4, 0.4));
+Line 3347: mInsetAlignment.append(Qt::AlignRight|Qt::AlignTop);
+Line 3525: lengthVec = QVector2D(1, 0);
+Line 3533: miterPen.setJoinStyle(Qt::MiterJoin); // to make arrow heads spikey
+Line 3534: QBrush brush(painter->pen().color(), Qt::SolidPattern);
+Line 3648: draw(painter, pos, QVector2D(qCos(angle), qSin(angle)));
+Line 3680: setPen(QPen(QColor(200,200,200), 0, Qt::DotLine));
+Line 3681: setSubGridPen(QPen(QColor(220,220,220), 0, Qt::DotLine));
+Line 3682: setZeroLinePen(QPen(QColor(200,200,200), 0, Qt::SolidLine));
+Line 3735: lines. To disable zero lines and just draw normal grid lines at zero, set \a pen to Qt::NoPen.
+Line 3744: A convenience function to easily set the QPainter::Antialiased hint on the provided \a painter
+Line 3750: overrides set with \ref QCustomPlot::setAntialiasedElements and \ref
+Line 3751: QCustomPlot::setNotAntialiasedElements.
+Line 3787: if (mParentAxis->orientation() == Qt::Horizontal)
+Line 3791: if (mZeroLinePen.style() != Qt::NoPen && mParentAxis->mRange.lower < 0 && mParentAxis->mRange.upper > 0)
+Line 3802: painter->drawLine(QLineF(t, mParentAxis->mAxisRect->bottom(), t, mParentAxis->mAxisRect->top()));
+Line 3814: painter->drawLine(QLineF(t, mParentAxis->mAxisRect->bottom(), t, mParentAxis->mAxisRect->top()));
+Line 3820: if (mZeroLinePen.style() != Qt::NoPen && mParentAxis->mRange.lower < 0 && mParentAxis->mRange.upper > 0)
+Line 3831: painter->drawLine(QLineF(mParentAxis->mAxisRect->left(), t, mParentAxis->mAxisRect->right(), t));
+Line 3843: painter->drawLine(QLineF(mParentAxis->mAxisRect->left(), t, mParentAxis->mAxisRect->right(), t));
+Line 3861: if (mParentAxis->orientation() == Qt::Horizontal)
+Line 3866: painter->drawLine(QLineF(t, mParentAxis->mAxisRect->bottom(), t, mParentAxis->mAxisRect->top()));
+Line 3873: painter->drawLine(QLineF(mParentAxis->mAxisRect->left(), t, mParentAxis->mAxisRect->right(), t));
+Line 3887: QCustomPlot::xAxis (bottom), QCustomPlot::yAxis (left), QCustomPlot::xAxis2 (top) and
+Line 3888: QCustomPlot::yAxis2 (right).
+Line 3999: mBasePen(QPen(Qt::black, 0, Qt::SolidLine, Qt::SquareCap)),
+Line 4000: mSelectedBasePen(QPen(Qt::blue, 2)),
+Line 4004: mSelectedLabelFont(QFont(mLabelFont.family(), mLabelFont.pointSize(), QFont::Bold)),
+Line 4005: mLabelColor(Qt::black),
+Line 4006: mSelectedLabelColor(Qt::blue),
+Line 4012: mSelectedTickLabelFont(QFont(mTickLabelFont.family(), mTickLabelFont.pointSize(), QFont::Bold)),
+Line 4013: mTickLabelColor(Qt::black),
+Line 4014: mSelectedTickLabelColor(Qt::blue),
+Line 4015: mDateTimeFormat(QLatin1String("hh:mm:ss\ndd.MM.yy")),
+Line 4016: mDateTimeSpec(Qt::LocalTime),
+Line 4028: mTickPen(QPen(Qt::black, 0, Qt::SolidLine, Qt::SquareCap)),
+Line 4029: mSelectedTickPen(QPen(Qt::blue, 2)),
+Line 4030: mSubTickPen(QPen(Qt::black, 0, Qt::SolidLine, Qt::SquareCap)),
+Line 4031: mSelectedSubTickPen(QPen(Qt::blue, 2)),
+Line 4101: result.append(QLatin1Char('b'));
+Line 4103: result.append(QLatin1Char('c'));
+Line 4228: (When \ref QCustomPlot::setInteractions contains iSelectAxes.)
+Line 4250: QCustomPlot::setInteractions contains iSelectAxes. You only need to call this function when you
+Line 4324: Qt::AlignLeft, Qt::AlignRight or Qt::AlignCenter. This will cause the left border, right border,
+Line 4326: default to Qt::AlignCenter.
+Line 4330: if (alignment == Qt::AlignLeft)
+Line 4332: else if (alignment == Qt::AlignRight)
+Line 4334: else // alignment == Qt::AlignCenter
+Line 4565: QDateTime::toTime_t() function. Since this only gives a resolution of one second, there is also
+Line 4566: the QDateTime::toMSecsSinceEpoch() function which returns the timespan described above in
+Line 4647: for details about the \a format string, see the documentation of QDateTime::toString().
+Line 4666: The default value of QDateTime objects (and also QCustomPlot) is <tt>Qt::LocalTime</tt>. However,
+Line 4668: timeSpec to <tt>Qt::UTC</tt> to get the correct axis labels.
+Line 4680: QString::number() and QLocale::toString(). For reference about that, see the "Argument Formats"
+Line 4723: QString allowedFormatChars(QLatin1String("eEfgG"));
+Line 4726: mNumberFormatChar = QLatin1Char(formatCode.at(0).toLatin1());
+Line 4740: if (formatCode.at(1) == QLatin1Char('b') && (mNumberFormatChar == QLatin1Char('e') || mNumberFormatChar == QLatin1Char('g')))
+Line 4755: if (formatCode.at(2) == QLatin1Char('c'))
+Line 4758: } else if (formatCode.at(2) == QLatin1Char('d'))
+Line 4769: Sets the precision of the tick label numbers. See QLocale::toString(double i, char f, int prec)
+Line 5060: \see setTickLabelFont, setSelectableParts, setSelectedParts, QCustomPlot::setInteractions
+Line 5074: \see setLabelFont, setSelectableParts, setSelectedParts, QCustomPlot::setInteractions
+Line 5085: \see setTickLabelColor, setSelectableParts, setSelectedParts, QCustomPlot::setInteractions
+Line 5098: \see setLabelColor, setSelectableParts, setSelectedParts, QCustomPlot::setInteractions
+Line 5108: \see setBasePen, setSelectableParts, setSelectedParts, QCustomPlot::setInteractions
+Line 5118: \see setTickPen, setSelectableParts, setSelectedParts, QCustomPlot::setInteractions
+Line 5128: \see setSubTickPen, setSelectableParts, setSelectedParts, QCustomPlot::setInteractions
+Line 5239: if (otherAxis->orientation() == Qt::Horizontal)
+Line 5244: if (orientation() == Qt::Horizontal)
+Line 5250: setRange(range().center(), newRangeSize, Qt::AlignCenter);
+Line 5310: if (orientation() == Qt::Horizontal)
+Line 5325: } else // orientation() == Qt::Vertical
+Line 5348: if (orientation() == Qt::Horizontal)
+Line 5370: } else // orientation() == Qt::Vertical
+Line 5402: \see setSelectedParts, setSelectableParts, QCustomPlot::setInteractions
+Line 5601: #if QT_VERSION < QT_VERSION_CHECK(4, 7, 0) // use fromMSecsSinceEpoch function if available, to gain sub-second accuracy on tick labels (e.g. for format "hh:mm:ss:zzz")
+Line 5602: mTickVectorLabels[i] = mParentPlot->locale().toString(QDateTime::fromTime_t(mTickVector.at(i)).toTimeSpec(mDateTimeSpec), mDateTimeFormat);
+Line 5604: mTickVectorLabels[i] = mParentPlot->locale().toString(QDateTime::fromMSecsSinceEpoch(mTickVector.at(i)*1000).toTimeSpec(mDateTimeSpec), mDateTimeFormat);
+Line 5764: Q_UNUSED(event)
+Line 5786: A convenience function to easily set the QPainter::Antialiased hint on the provided \a painter
+Line 5792: overrides set with \ref QCustomPlot::setAntialiasedElements and \ref
+Line 5793: QCustomPlot::setNotAntialiasedElements.
+Line 6086: basePen(QPen(Qt::black, 0, Qt::SolidLine, Qt::SquareCap)),
+Line 6099: tickPen(QPen(Qt::black, 0, Qt::SolidLine, Qt::SquareCap)),
+Line 6100: subTickPen(QPen(Qt::black, 0, Qt::SolidLine, Qt::SquareCap)),
+Line 6150: baseLine.setPoints(origin+QPointF(xCor, yCor), origin+QPointF(axisRect.width()+xCor, yCor));
+Line 6152: baseLine.setPoints(origin+QPointF(xCor, yCor), origin+QPointF(xCor, -axisRect.height()+yCor));
+Line 6154: baseLine = QLineF(baseLine.p2(), baseLine.p1()); // won't make a difference for line itself, but for line endings later
+Line 6165: painter->drawLine(QLineF(tickPositions.at(i)+xCor, origin.y()-tickLengthOut*tickDir+yCor, tickPositions.at(i)+xCor, origin.y()+tickLengthIn*tickDir+yCor));
+Line 6169: painter->drawLine(QLineF(origin.x()-tickLengthOut*tickDir+xCor, tickPositions.at(i)+yCor, origin.x()+tickLengthIn*tickDir+xCor, tickPositions.at(i)+yCor));
+Line 6182: painter->drawLine(QLineF(subTickPositions.at(i)+xCor, origin.y()-subTickLengthOut*tickDir+yCor, subTickPositions.at(i)+xCor, origin.y()+subTickLengthIn*tickDir+yCor));
+Line 6186: painter->drawLine(QLineF(origin.x()-subTickLengthOut*tickDir+xCor, subTickPositions.at(i)+yCor, origin.x()+subTickLengthIn*tickDir+xCor, subTickPositions.at(i)+yCor));
+Line 6194: painter->setBrush(QBrush(basePen.color()));
+Line 6197: lowerEnding.draw(painter, QVector2D(baseLine.p1())-baseLineVector.normalized()*lowerEnding.realLength()*(lowerEnding.inverted()?-1:1), -baseLineVector);
+Line 6199: upperEnding.draw(painter, QVector2D(baseLine.p2())+baseLineVector.normalized()*upperEnding.realLength()*(upperEnding.inverted()?-1:1), baseLineVector);
+Line 6215: painter->setPen(QPen(tickLabelColor));
+Line 6234: painter->setPen(QPen(labelColor));
+Line 6235: labelBounds = painter->fontMetrics().boundingRect(0, 0, 0, 0, Qt::TextDontClip, label);
+Line 6241: painter->drawText(0, 0, axisRect.height(), labelBounds.height(), Qt::TextDontClip | Qt::AlignCenter, label);
+Line 6249: painter->drawText(0, 0, axisRect.height(), labelBounds.height(), Qt::TextDontClip | Qt::AlignCenter, label);
+Line 6253: painter->drawText(origin.x(), origin.y()-margin-labelBounds.height(), axisRect.width(), labelBounds.height(), Qt::TextDontClip | Qt::AlignCenter, label);
+Line 6255: painter->drawText(origin.x(), origin.y()+margin, axisRect.width(), labelBounds.height(), Qt::TextDontClip | Qt::AlignCenter, label);
+Line 6304: //painter->setBrush(Qt::NoBrush);
+Line 6339: bounds = fontMetrics.boundingRect(0, 0, 0, 0, Qt::TextDontClip | Qt::AlignHCenter | Qt::AlignVCenter, label);
+Line 6367: result.append(QByteArray::number(tickLabelRotation));
+Line 6368: result.append(QByteArray::number((int)tickLabelSide));
+Line 6369: result.append(QByteArray::number((int)substituteExponent));
+Line 6370: result.append(QByteArray::number((int)numberMultiplyCross));
+Line 6371: result.append(tickLabelColor.name().toLatin1()+QByteArray::number(tickLabelColor.alpha(), 16));
+Line 6416: cachedLabel->pixmap = QPixmap(labelData.rotatedTotalBounds.size());
+Line 6417: cachedLabel->pixmap.fill(Qt::transparent);
+Line 6488: painter->drawText(0, 0, 0, 0, Qt::TextDontClip, labelData.basePart);
+Line 6490: painter->drawText(labelData.baseBounds.width()+1, 0, labelData.expBounds.width(), labelData.expBounds.height(), Qt::TextDontClip,  labelData.expPart);
+Line 6494: painter->drawText(0, 0, labelData.totalBounds.width(), labelData.totalBounds.height(), Qt::TextDontClip | Qt::AlignHCenter, labelData.basePart);
+Line 6520: ePos = text.indexOf(QLatin1Char('e'));
+Line 6524: while (eLast+1 < text.size() && (text.at(eLast+1) == QLatin1Char('+') || text.at(eLast+1) == QLatin1Char('-') || text.at(eLast+1).isDigit()))
+Line 6540: if (abbreviateDecimalPowers && result.basePart == QLatin1String("1"))
+Line 6541: result.basePart = QLatin1String("10");
+Line 6543: result.basePart += (numberMultiplyCross ? QString(QChar(215)) : QString(QChar(183))) + QLatin1String("10");
+Line 6546: while (result.expPart.length() > 2 && result.expPart.at(1) == QLatin1Char('0')) // length > 2 so we leave one zero when numberFormatChar is 'e'
+Line 6548: if (!result.expPart.isEmpty() && result.expPart.at(0) == QLatin1Char('+'))
+Line 6557: result.baseBounds = QFontMetrics(result.baseFont).boundingRect(0, 0, 0, 0, Qt::TextDontClip, result.basePart);
+Line 6558: result.expBounds = QFontMetrics(result.expFont).boundingRect(0, 0, 0, 0, Qt::TextDontClip, result.expPart);
+Line 6563: result.totalBounds = QFontMetrics(result.baseFont).boundingRect(0, 0, 0, 0, Qt::TextDontClip | Qt::AlignHCenter, result.basePart);
+Line 6565: result.totalBounds.moveTopLeft(QPoint(0, 0)); // want bounding box aligned top left at origin, independent of how it was created, to make further processing simpler
+Line 6679: return QPointF(x, y);
+Line 6724: (typically created with \ref QCustomPlot::addGraph)
+Line 6868: mPen(Qt::black),
+Line 6869: mSelectedPen(Qt::black),
+Line 6870: mBrush(Qt::NoBrush),
+Line 6871: mSelectedBrush(Qt::NoBrush),
+Line 6895: Note that this setting may be overridden by \ref QCustomPlot::setAntialiasedElements and \ref
+Line 6896: QCustomPlot::setNotAntialiasedElements.
+Line 6906: Note that this setting may be overridden by \ref QCustomPlot::setAntialiasedElements and \ref
+Line 6907: QCustomPlot::setNotAntialiasedElements.
+Line 6917: Note that this setting may be overridden by \ref QCustomPlot::setAntialiasedElements and \ref
+Line 6918: QCustomPlot::setNotAntialiasedElements.
+Line 6955: it's not set to Qt::NoBrush.
+Line 6978: The typical mathematical choice is to use the x-axis (QCustomPlot::xAxis) as key axis and the
+Line 6979: y-axis (QCustomPlot::yAxis) as value axis.
+Line 6994: case. The typical mathematical choice is to use the x-axis (QCustomPlot::xAxis) as key axis and
+Line 6995: the y-axis (QCustomPlot::yAxis) as value axis.
+Line 7009: (When \ref QCustomPlot::setInteractions contains iSelectPlottables.)
+Line 7030: QCustomPlot::setInteractions contains iSelectPlottables. You only need to call this function when
+Line 7145: Adds this plottable to the legend of the parent QCustomPlot (QCustomPlot::legend).
+Line 7196: return QRect();
+Line 7221: if (keyAxis->orientation() == Qt::Horizontal)
+Line 7241: if (!keyAxis || !valueAxis) { qDebug() << Q_FUNC_INFO << "invalid key or value axis"; return QPointF(); }
+Line 7243: if (keyAxis->orientation() == Qt::Horizontal)
+Line 7244: return QPointF(keyAxis->coordToPixel(key), valueAxis->coordToPixel(value));
+Line 7246: return QPointF(valueAxis->coordToPixel(value), keyAxis->coordToPixel(key));
+Line 7265: if (keyAxis->orientation() == Qt::Horizontal)
+Line 7308: A convenience function to easily set the QPainter::Antialiased hint on the provided \a painter
+Line 7314: overrides set with \ref QCustomPlot::setAntialiasedElements and \ref
+Line 7315: QCustomPlot::setNotAntialiasedElements.
+Line 7326: A convenience function to easily set the QPainter::Antialiased hint on the provided \a painter
+Line 7330: overrides set with \ref QCustomPlot::setAntialiasedElements and \ref
+Line 7331: QCustomPlot::setNotAntialiasedElements.
+Line 7342: A convenience function to easily set the QPainter::Antialiased hint on the provided \a painter
+Line 7346: overrides set with \ref QCustomPlot::setAntialiasedElements and \ref
+Line 7347: QCustomPlot::setNotAntialiasedElements.
+Line 7358: A convenience function to easily set the QPainter::Antialiased hint on the provided \a painter
+Line 7362: overrides set with \ref QCustomPlot::setAntialiasedElements and \ref
+Line 7363: QCustomPlot::setNotAntialiasedElements.
+Line 7392: double mu = QVector2D::dotProduct(p-a, v)/vLengthSqr;
+Line 7406: Q_UNUSED(event)
+Line 7407: Q_UNUSED(details)
+Line 7513: return QPointF();
+Line 7518: return QPointF();
+Line 8009: if (mKeyAxis && mKeyAxis.data()->orientation() == Qt::Horizontal)
+Line 8011: else if (mValueAxis && mValueAxis.data()->orientation() == Qt::Horizontal)
+Line 8053: if (mKeyAxis && mKeyAxis.data()->orientation() == Qt::Vertical)
+Line 8055: else if (mValueAxis && mValueAxis.data()->orientation() == Qt::Vertical)
+Line 8134: if (mKeyAxis && mKeyAxis.data()->orientation() == Qt::Horizontal)
+Line 8136: else if (mValueAxis && mValueAxis.data()->orientation() == Qt::Horizontal)
+Line 8176: if (mKeyAxis && mKeyAxis.data()->orientation() == Qt::Vertical)
+Line 8178: else if (mValueAxis && mValueAxis.data()->orientation() == Qt::Vertical)
+Line 8416: (When \ref QCustomPlot::setInteractions contains QCustomPlot::iSelectItems.)
+Line 8421: \see QCustomPlot::setInteractions, setSelected
+Line 8437: QCustomPlot::setInteractions contains QCustomPlot::iSelectItems. You only need to call this
+Line 8520: If the item is not clipped to an axis rect, the \ref QCustomPlot::viewport rect is returned.
+Line 8534: A convenience function to easily set the QPainter::Antialiased hint on the provided \a painter
+Line 8540: overrides set with \ref QCustomPlot::setAntialiasedElements and \ref
+Line 8541: QCustomPlot::setNotAntialiasedElements.
+Line 8572: double mu = QVector2D::dotProduct(p-a, v)/vLengthSqr;
+Line 8604: lines << QLineF(rect.topLeft(), rect.topRight()) << QLineF(rect.bottomLeft(), rect.bottomRight())
+Line 8605: << QLineF(rect.topLeft(), rect.bottomLeft()) << QLineF(rect.topRight(), rect.bottomRight());
+Line 8637: return QPointF();
+Line 8700: Q_UNUSED(event)
+Line 8701: Q_UNUSED(details)
+Line 8749: /*! \fn QRect QCustomPlot::viewport() const
+Line 8756: Don't confuse the viewport with the axis rect (QCustomPlot::axisRect). An axis rect is typically
+Line 8773: /*! \fn void QCustomPlot::mouseDoubleClick(QMouseEvent *event)
+Line 8778: /*! \fn void QCustomPlot::mousePress(QMouseEvent *event)
+Line 8787: /*! \fn void QCustomPlot::mouseMove(QMouseEvent *event)
+Line 8801: /*! \fn void QCustomPlot::mouseRelease(QMouseEvent *event)
+Line 8810: /*! \fn void QCustomPlot::mouseWheel(QMouseEvent *event)
+Line 8923: /*! \fn void QCustomPlot::selectionChangedByUser()
+Line 8938: /*! \fn void QCustomPlot::beforeReplot()
+Line 8949: /*! \fn void QCustomPlot::afterReplot()
+Line 9039: QCustomPlot::QCustomPlot(QWidget *parent) :
+Line 9040: QWidget(parent),
+Line 9053: mBackgroundBrush(Qt::white, Qt::SolidPattern),
+Line 9055: mBackgroundScaledMode(Qt::KeepAspectRatioByExpanding),
+Line 9058: mMultiSelectModifier(Qt::ControlModifier),
+Line 9063: setAttribute(Qt::WA_NoMousePropagation);
+Line 9064: setAttribute(Qt::WA_OpaquePaintEvent);
+Line 9067: currentLocale.setNumberOptions(QLocale::OmitGroupSeparator);
+Line 9077: setCurrentLayer(QLatin1String("main"));
+Line 9083: mPlotLayout->setLayer(QLatin1String("main"));
+Line 9092: defaultAxisRect->insetLayout()->addElement(legend, Qt::AlignRight|Qt::AlignTop);
+Line 9093: defaultAxisRect->insetLayout()->setMargins(QMargins(12, 12, 12, 12));
+Line 9095: defaultAxisRect->setLayer(QLatin1String("background"));
+Line 9096: xAxis->setLayer(QLatin1String("axes"));
+Line 9097: yAxis->setLayer(QLatin1String("axes"));
+Line 9098: xAxis2->setLayer(QLatin1String("axes"));
+Line 9099: yAxis2->setLayer(QLatin1String("axes"));
+Line 9100: xAxis->grid()->setLayer(QLatin1String("grid"));
+Line 9101: yAxis->grid()->setLayer(QLatin1String("grid"));
+Line 9102: xAxis2->grid()->setLayer(QLatin1String("grid"));
+Line 9103: yAxis2->grid()->setLayer(QLatin1String("grid"));
+Line 9104: legend->setLayer(QLatin1String("legend"));
+Line 9111: QCustomPlot::~QCustomPlot()
+Line 9220: plottable to the legend (QCustomPlot::legend).
+Line 9224: void QCustomPlot::setAutoAddPlottableToLegend(bool on)
+Line 9316: void QCustomPlot::setSelectionTolerance(int pixels)
+Line 9330: void QCustomPlot::setNoAntialiasingOnDrag(bool enabled)
+Line 9368: By default the multi-select-modifier is set to Qt::ControlModifier.
+Line 9372: void QCustomPlot::setMultiSelectModifier(Qt::KeyboardModifier modifier)
+Line 9379: (QCustomPlot::plotLayout()) uses as its rect. Normally, the viewport is the entire widget rect.
+Line 9384: void QCustomPlot::setViewport(const QRect &rect)
+Line 9406: void QCustomPlot::setBackground(const QPixmap &pm)
+Line 9409: mScaledBackgroundPixmap = QPixmap();
+Line 9420: Set \a brush to Qt::NoBrush or Qt::Transparent to leave background transparent. This can be
+Line 9425: void QCustomPlot::setBackground(const QBrush &brush)
+Line 9437: void QCustomPlot::setBackground(const QPixmap &pm, bool scaled, Qt::AspectRatioMode mode)
+Line 9440: mScaledBackgroundPixmap = QPixmap();
+Line 9455: void QCustomPlot::setBackgroundScaled(bool scaled)
+Line 9466: void QCustomPlot::setBackgroundScaledMode(Qt::AspectRatioMode mode)
+Line 9475: plottable, see QCustomPlot::plottable()
+Line 9509: the legend (QCustomPlot::legend). QCustomPlot takes ownership of the plottable.
+Line 9543: Removes the specified plottable from the plot and, if necessary, from the legend (QCustomPlot::legend).
+Line 9572: bool QCustomPlot::removePlottable(int index)
+Line 9584: Removes all plottables from the plot (and the QCustomPlot::legend, if necessary).
+Line 9590: int QCustomPlot::clearPlottables()
+Line 9603: int QCustomPlot::plottableCount() const
+Line 9675: graph, see QCustomPlot::graph()
+Line 9737: newGraph->setName(QLatin1String("Graph ")+QString::number(mGraphs.size()));
+Line 9747: Removes the specified \a graph from the plot and, if necessary, from the QCustomPlot::legend. If
+Line 9764: bool QCustomPlot::removeGraph(int index)
+Line 9773: Removes all graphs from the plot (and the QCustomPlot::legend, if necessary).
+Line 9779: int QCustomPlot::clearGraphs()
+Line 9792: int QCustomPlot::graphCount() const
+Line 9820: item, see QCustomPlot::item()
+Line 9898: bool QCustomPlot::removeItem(int index)
+Line 9916: int QCustomPlot::clearItems()
+Line 9929: int QCustomPlot::itemCount() const
+Line 10050: bool QCustomPlot::setCurrentLayer(const QString &name)
+Line 10087: int QCustomPlot::layerCount() const
+Line 10211: All axis rects can be accessed via QCustomPlot::axisRect().
+Line 10217: int QCustomPlot::axisRectCount() const
+Line 10366: void QCustomPlot::deselectAll()
+Line 10388: void QCustomPlot::replot(QCustomPlot::RefreshPriority refreshPriority)
+Line 10395: mPaintBuffer.fill(mBackgroundBrush.style() == Qt::SolidPattern ? mBackgroundBrush.color() : Qt::transparent);
+Line 10400: painter.setRenderHint(QPainter::HighQualityAntialiasing); // to make Antialiasing look good if using the OpenGL graphicssystem
+Line 10401: if (mBackgroundBrush.style() != Qt::SolidPattern && mBackgroundBrush.style() != Qt::NoBrush)
+Line 10424: void QCustomPlot::rescaleAxes(bool onlyVisiblePlottables)
+Line 10471: bool QCustomPlot::savePdf(const QString &fileName, bool noCosmeticPen, int width, int height, const QString &pdfCreator, const QString &pdfTitle)
+Line 10475: Q_UNUSED(fileName)
+Line 10476: Q_UNUSED(noCosmeticPen)
+Line 10477: Q_UNUSED(width)
+Line 10478: Q_UNUSED(height)
+Line 10479: Q_UNUSED(pdfCreator)
+Line 10480: Q_UNUSED(pdfTitle)
+Line 10494: QPrinter printer(QPrinter::ScreenResolution);
+Line 10496: printer.setOutputFormat(QPrinter::PdfFormat);
+Line 10497: printer.setColorMode(QPrinter::Color);
+Line 10498: printer.printEngine()->setProperty(QPrintEngine::PPK_Creator, pdfCreator);
+Line 10499: printer.printEngine()->setProperty(QPrintEngine::PPK_DocumentName, pdfTitle);
+Line 10501: setViewport(QRect(0, 0, newWidth, newHeight));
+Line 10502: #if QT_VERSION < QT_VERSION_CHECK(5, 3, 0)
+Line 10504: printer.setPaperSize(viewport().size(), QPrinter::DevicePixel);
+Line 10507: pageLayout.setMode(QPageLayout::FullPageMode);
+Line 10508: pageLayout.setOrientation(QPageLayout::Portrait);
+Line 10509: pageLayout.setMargins(QMarginsF(0, 0, 0, 0));
+Line 10510: pageLayout.setPageSize(QPageSize(viewport().size(), QPageSize::Point, QString(), QPageSize::ExactMatch));
+Line 10520: if (mBackgroundBrush.style() != Qt::NoBrush &&
+Line 10521: mBackgroundBrush.color() != Qt::white &&
+Line 10522: mBackgroundBrush.color() != Qt::transparent &&
+Line 10561: &brush) with no brush (Qt::NoBrush) or a transparent color (Qt::transparent), before saving.
+Line 10567: the system, see Qt docs about QImageWriter::supportedImageFormats().
+Line 10571: bool QCustomPlot::savePng(const QString &fileName, int width, int height, double scale, int quality)
+Line 10606: the system, see Qt docs about QImageWriter::supportedImageFormats().
+Line 10610: bool QCustomPlot::saveJpg(const QString &fileName, int width, int height, double scale, int quality)
+Line 10642: the system, see Qt docs about QImageWriter::supportedImageFormats().
+Line 10646: bool QCustomPlot::saveBmp(const QString &fileName, int width, int height, double scale)
+Line 10659: QSize QCustomPlot::minimumSizeHint() const
+Line 10669: QSize QCustomPlot::sizeHint() const
+Line 10679: void QCustomPlot::paintEvent(QPaintEvent *event)
+Line 10681: Q_UNUSED(event);
+Line 10692: void QCustomPlot::resizeEvent(QResizeEvent *event)
+Line 10695: mPaintBuffer = QPixmap(event->size());
+Line 10709: void QCustomPlot::mouseDoubleClickEvent(QMouseEvent *event)
+Line 10741: //QWidget::mouseDoubleClickEvent(event); don't call base class implementation because it would just cause a mousePress/ReleaseEvent, which we don't want.
+Line 10751: void QCustomPlot::mousePressEvent(QMouseEvent *event)
+Line 10761: QWidget::mousePressEvent(event);
+Line 10773: void QCustomPlot::mouseMoveEvent(QMouseEvent *event)
+Line 10781: QWidget::mouseMoveEvent(event);
+Line 10798: void QCustomPlot::mouseReleaseEvent(QMouseEvent *event)
+Line 10805: if (event->button() == Qt::LeftButton)
+Line 10869: QWidget::mouseReleaseEvent(event);
+Line 10878: void QCustomPlot::wheelEvent(QWheelEvent *event)
+Line 10886: QWidget::wheelEvent(event);
+Line 10925: painter->setBrush(Qt::NoBrush);
+Line 10926: painter->setPen(QPen(QColor(0, 0, 0, 100), 0, Qt::DashLine));
+Line 10928: painter->setPen(QPen(QColor(255, 0, 0, 100), 0, Qt::DashLine));
+Line 10964: mScaledBackgroundPixmap = mBackgroundPixmap.scaled(mViewport.size(), mBackgroundScaledMode, Qt::SmoothTransformation);
+Line 10965: painter->drawPixmap(mViewport.topLeft(), mScaledBackgroundPixmap, QRect(0, 0, mViewport.width(), mViewport.height()) & mScaledBackgroundPixmap.rect());
+Line 10968: painter->drawPixmap(mViewport.topLeft(), mBackgroundPixmap, QRect(0, 0, mViewport.width(), mViewport.height()));
+Line 10977: so it may clear its QCustomPlot::xAxis, yAxis, xAxis2 and yAxis2 members accordingly.
+Line 10996: it may clear its QCustomPlot::legend member accordingly.
+Line 11010: void QCustomPlot::updateLayerIndices() const
+Line 11061: by the system, see Qt docs about QImageWriter::supportedImageFormats().
+Line 11065: bool QCustomPlot::saveRastered(const QString &fileName, int width, int height, double scale, const char *format, int quality)
+Line 11082: QPixmap QCustomPlot::toPixmap(int width, int height, double scale)
+Line 11099: result.fill(mBackgroundBrush.style() == Qt::SolidPattern ? mBackgroundBrush.color() : Qt::transparent); // if using non-solid pattern, make transparent now and draw brush pattern later
+Line 11105: setViewport(QRect(0, 0, newWidth, newHeight));
+Line 11113: if (mBackgroundBrush.style() != Qt::SolidPattern && mBackgroundBrush.style() != Qt::NoBrush) // solid fills were done a few lines above with QPixmap::fill
+Line 11121: return QPixmap();
+Line 11155: setViewport(QRect(0, 0, newWidth, newHeight));
+Line 11157: if (mBackgroundBrush.style() != Qt::NoBrush) // unlike in toPixmap, we can't do QPixmap::fill for Qt::SolidPattern brush style, so we also draw solid fills with fillRect here
+Line 11429: setColorStopAt(0, Qt::black);
+Line 11430: setColorStopAt(1, Qt::white);
+Line 11434: setColorStopAt(0, QColor(50, 0, 0));
+Line 11435: setColorStopAt(0.2, QColor(180, 10, 0));
+Line 11436: setColorStopAt(0.4, QColor(245, 50, 0));
+Line 11437: setColorStopAt(0.6, QColor(255, 150, 10));
+Line 11438: setColorStopAt(0.8, QColor(255, 255, 50));
+Line 11439: setColorStopAt(1, QColor(255, 255, 255));
+Line 11443: setColorStopAt(0, QColor(0, 0, 50));
+Line 11444: setColorStopAt(0.2, QColor(0, 10, 180));
+Line 11445: setColorStopAt(0.4, QColor(0, 50, 245));
+Line 11446: setColorStopAt(0.6, QColor(10, 150, 255));
+Line 11447: setColorStopAt(0.8, QColor(50, 255, 255));
+Line 11448: setColorStopAt(1, QColor(255, 255, 255));
+Line 11452: setColorStopAt(0, QColor(10, 20, 30));
+Line 11453: setColorStopAt(1, QColor(250, 255, 250));
+Line 11457: setColorStopAt(0, QColor(0, 0, 255));
+Line 11458: setColorStopAt(1, QColor(255, 250, 250));
+Line 11462: setColorStopAt(0, QColor(70, 170, 210));
+Line 11463: setColorStopAt(0.20, QColor(90, 160, 180));
+Line 11464: setColorStopAt(0.25, QColor(45, 130, 175));
+Line 11465: setColorStopAt(0.30, QColor(100, 140, 125));
+Line 11466: setColorStopAt(0.5, QColor(100, 140, 100));
+Line 11467: setColorStopAt(0.6, QColor(130, 145, 120));
+Line 11468: setColorStopAt(0.7, QColor(140, 130, 120));
+Line 11469: setColorStopAt(0.9, QColor(180, 190, 190));
+Line 11470: setColorStopAt(1, QColor(210, 210, 230));
+Line 11474: setColorStopAt(0, QColor(50, 10, 10));
+Line 11475: setColorStopAt(0.45, QColor(0, 0, 255));
+Line 11476: setColorStopAt(0.8, QColor(0, 255, 255));
+Line 11477: setColorStopAt(1, QColor(0, 255, 0));
+Line 11481: setColorStopAt(0, QColor(0, 0, 50));
+Line 11482: setColorStopAt(0.15, QColor(20, 0, 120));
+Line 11483: setColorStopAt(0.33, QColor(200, 30, 140));
+Line 11484: setColorStopAt(0.6, QColor(255, 100, 0));
+Line 11485: setColorStopAt(0.85, QColor(255, 255, 40));
+Line 11486: setColorStopAt(1, QColor(255, 255, 255));
+Line 11490: setColorStopAt(0, QColor(50, 255, 255));
+Line 11491: setColorStopAt(0.18, QColor(10, 70, 255));
+Line 11492: setColorStopAt(0.28, QColor(10, 10, 190));
+Line 11493: setColorStopAt(0.5, QColor(0, 0, 0));
+Line 11494: setColorStopAt(0.72, QColor(190, 10, 10));
+Line 11495: setColorStopAt(0.82, QColor(255, 70, 10));
+Line 11496: setColorStopAt(1, QColor(255, 255, 50));
+Line 11500: setColorStopAt(0, QColor(50, 0, 50));
+Line 11501: setColorStopAt(0.15, QColor(0, 0, 255));
+Line 11502: setColorStopAt(0.35, QColor(0, 255, 255));
+Line 11503: setColorStopAt(0.6, QColor(255, 255, 0));
+Line 11504: setColorStopAt(0.75, QColor(255, 30, 0));
+Line 11505: setColorStopAt(1, QColor(50, 0, 0));
+Line 11509: setColorStopAt(0, QColor(0, 0, 100));
+Line 11510: setColorStopAt(0.15, QColor(0, 50, 255));
+Line 11511: setColorStopAt(0.35, QColor(0, 255, 255));
+Line 11512: setColorStopAt(0.65, QColor(255, 255, 0));
+Line 11513: setColorStopAt(0.85, QColor(255, 30, 0));
+Line 11514: setColorStopAt(1, QColor(100, 0, 0));
+Line 11518: setColorStopAt(0, QColor(255, 0, 0));
+Line 11519: setColorStopAt(1.0/3.0, QColor(0, 0, 255));
+Line 11520: setColorStopAt(2.0/3.0, QColor(0, 255, 0));
+Line 11521: setColorStopAt(1, QColor(255, 0, 0));
+Line 11602: mColorBuffer[i] = QColor::fromHsvF(hue, (1-t)*lowHsv.saturationF() + t*highHsv.saturationF(), (1-t)*lowHsv.valueF() + t*highHsv.valueF()).rgb();
+Line 11629: Initially QCustomPlot has one axis rect, accessible via QCustomPlot::axisRect(). However, the
+Line 11631: (QCustomPlot::plotLayout).
+Line 11750: mBackgroundBrush(Qt::NoBrush),
+Line 11752: mBackgroundScaledMode(Qt::KeepAspectRatioByExpanding),
+Line 11754: mRangeDrag(Qt::Horizontal|Qt::Vertical),
+Line 11755: mRangeZoom(Qt::Horizontal|Qt::Vertical),
+Line 11765: setMinimumMargins(QMargins(15, 15, 15, 15));
+Line 11785: xAxis2->grid()->setZeroLinePen(Qt::NoPen);
+Line 11786: yAxis2->grid()->setZeroLinePen(Qt::NoPen);
+Line 12218: mScaledBackgroundPixmap = QPixmap();
+Line 12230: To disable drawing of a background brush, set \a brush to Qt::NoBrush.
+Line 12249: mScaledBackgroundPixmap = QPixmap();
+Line 12286: return (orientation == Qt::Horizontal ? mRangeDragHorzAxis.data() : mRangeDragVertAxis.data());
+Line 12296: return (orientation == Qt::Horizontal ? mRangeZoomHorzAxis.data() : mRangeZoomVertAxis.data());
+Line 12306: return (orientation == Qt::Horizontal ? mRangeZoomFactorHorz : mRangeZoomFactorVert);
+Line 12317: QCustomPlot::setInteractions. To enable range dragging for both directions, pass <tt>Qt::Horizontal |
+Line 12318: Qt::Vertical</tt> as \a orientations.
+Line 12320: In addition to setting \a orientations to a non-zero value, make sure \ref QCustomPlot::setInteractions
+Line 12323: \see setRangeZoom, setRangeDragAxes, QCustomPlot::setNoAntialiasingOnDrag
+Line 12337: QCustomPlot::setInteractions. To enable range zooming for both directions, pass <tt>Qt::Horizontal |
+Line 12338: Qt::Vertical</tt> as \a orientations.
+Line 12340: In addition to setting \a orientations to a non-zero value, make sure \ref QCustomPlot::setInteractions
+Line 12422: if (mBackgroundBrush != Qt::NoBrush)
+Line 12434: mScaledBackgroundPixmap = mBackgroundPixmap.scaled(mRect.size(), mBackgroundScaledMode, Qt::SmoothTransformation);
+Line 12435: painter->drawPixmap(mRect.topLeft()+QPoint(0, -1), mScaledBackgroundPixmap, QRect(0, 0, mRect.width(), mRect.height()) & mScaledBackgroundPixmap.rect());
+Line 12438: painter->drawPixmap(mRect.topLeft()+QPoint(0, -1), mBackgroundPixmap, QRect(0, 0, mRect.width(), mRect.height()));
+Line 12503: if (event->buttons() & Qt::LeftButton)
+Line 12535: if (mRangeDrag.testFlag(Qt::Horizontal))
+Line 12550: if (mRangeDrag.testFlag(Qt::Vertical))
+Line 12577: Q_UNUSED(event)
+Line 12588: Event handler for mouse wheel events. If rangeZoom is Qt::Horizontal, Qt::Vertical or both, the
+Line 12609: if (mRangeZoom.testFlag(Qt::Horizontal))
+Line 12615: if (mRangeZoom.testFlag(Qt::Vertical))
+Line 12679: setLayer(QLatin1String("legend"));
+Line 12680: setMargins(QMargins(8, 2, 8, 2));
+Line 12728: \see setSelectedParts, QCustomPlot::setInteractions
+Line 12745: \see setSelectableParts, QCustomPlot::setInteractions
+Line 12759: Q_UNUSED(details)
+Line 12785: Q_UNUSED(event)
+Line 12786: Q_UNUSED(details)
+Line 12891: painter->setPen(QPen(getTextColor()));
+Line 12893: QRectF textRect = painter->fontMetrics().boundingRect(0, 0, 0, iconSize.height(), Qt::TextDontClip, mPlottable->name());
+Line 12896: painter->drawText(mRect.x()+iconSize.width()+mParentLegend->iconTextPadding(), mRect.y(), textRect.width(), textHeight, Qt::TextDontClip, mPlottable->name());
+Line 12899: painter->setClipRect(iconRect, Qt::IntersectClip);
+Line 12903: if (getIconBorderPen().style() != Qt::NoPen)
+Line 12906: painter->setBrush(Qt::NoBrush);
+Line 12918: if (!mPlottable) return QSize();
+Line 12923: textRect = fontMetrics.boundingRect(0, 0, 0, iconSize.height(), Qt::TextDontClip, mPlottable->name());
+Line 12952: By default, every QCustomPlot has one legend (QCustomPlot::legend) which is placed in the inset
+Line 12973: QCustomPlot::legend
+Line 12979: setMargins(QMargins(2, 3, 2, 2));
+Line 12988: setBorderPen(QPen(Qt::black));
+Line 12989: setSelectedBorderPen(QPen(Qt::blue, 2));
+Line 12990: setIconBorderPen(Qt::NoPen);
+Line 12991: setSelectedIconBorderPen(QPen(Qt::blue, 2));
+Line 12992: setBrush(Qt::white);
+Line 12993: setSelectedBrush(Qt::white);
+Line 12994: setTextColor(Qt::black);
+Line 12995: setSelectedTextColor(Qt::blue);
+Line 13109: If no border is wanted, set this to \a Qt::NoPen.
+Line 13140: The entire selection mechanism is handled automatically when \ref QCustomPlot::setInteractions
+Line 13389: A convenience function to easily set the QPainter::Antialiased hint on the provided \a painter
+Line 13395: overrides set with \ref QCustomPlot::setAntialiasedElements and \ref
+Line 13396: QCustomPlot::setNotAntialiasedElements.
+Line 13456: Q_UNUSED(event)
+Line 13495: Q_UNUSED(parentPlot)
+Line 13514: signal \ref QCustomPlot::titleClick is emitted. A double click emits the \ref
+Line 13515: QCustomPlot::titleDoubleClick signal.
+Line 13537: mFont(QFont(QLatin1String("sans serif"), 13*1.5, QFont::Bold)),
+Line 13538: mTextColor(Qt::black),
+Line 13539: mSelectedFont(QFont(QLatin1String("sans serif"), 13*1.6, QFont::Bold)),
+Line 13540: mSelectedTextColor(Qt::blue),
+Line 13547: mFont = QFont(parentPlot->font().family(), parentPlot->font().pointSize()*1.5, QFont::Bold);
+Line 13548: mSelectedFont = QFont(parentPlot->font().family(), parentPlot->font().pointSize()*1.6, QFont::Bold);
+Line 13550: setMargins(QMargins(5, 5, 5, 0));
+Line 13560: mFont(QFont(parentPlot->font().family(), parentPlot->font().pointSize()*1.5, QFont::Bold)),
+Line 13561: mTextColor(Qt::black),
+Line 13562: mSelectedFont(QFont(parentPlot->font().family(), parentPlot->font().pointSize()*1.6, QFont::Bold)),
+Line 13563: mSelectedTextColor(Qt::blue),
+Line 13567: setLayer(QLatin1String("axes"));
+Line 13568: setMargins(QMargins(5, 5, 5, 0));
+Line 13662: painter->setPen(QPen(mainTextColor()));
+Line 13663: painter->drawText(mRect, Qt::AlignCenter, mText, &mTextBoundingRect);
+Line 13670: QSize result = metrics.boundingRect(0, 0, 0, 0, Qt::AlignCenter, mText).size();
+Line 13680: QSize result = metrics.boundingRect(0, 0, 0, 0, Qt::AlignCenter, mText).size();
+Line 13689: Q_UNUSED(event)
+Line 13690: Q_UNUSED(details)
+Line 13715: Q_UNUSED(details)
+Line 13785: might want to also change the minimum margins accordingly, e.g. <tt>setMinimumMargins(QMargins(6, 0, 6, 0))</tt>.
+Line 13839: setMinimumMargins(QMargins(0, 6, 0, 6)); // for default right color scale types, keep some room at bottom and top (important if no margin group is used)
+Line 13855: return QString();
+Line 13915: mColorAxis.data()->setLabel(QString());
+Line 14027: QCustomPlot::setInteractions) to allow range dragging.
+Line 14047: QCustomPlot::setInteractions) to allow range dragging.
+Line 14253: setMinimumMargins(QMargins(0, 0, 0, 0));
+Line 14320: mGradientImage = QImage(w, h, QImage::Format_RGB32);
+Line 14331: mGradientImage = QImage(w, h, QImage::Format_RGB32);
+Line 14450: Usually you create new graphs by calling QCustomPlot::addGraph. The resulting instance can be
+Line 14451: accessed via QCustomPlot::graph.
+Line 14462: (<tt>qQNaN()</tt> or <tt>std::numeric_limits<double>::quiet_NaN()</tt>) in between the two data points that shall be
+Line 14474: just set a brush with \ref setBrush which is neither Qt::NoBrush nor fully transparent.
+Line 14480: \see QCustomPlot::addGraph, QCustomPlot::graph
+Line 14503: To directly create a graph inside a plot, you can also use the simpler QCustomPlot::addGraph function.
+Line 14510: setPen(QPen(Qt::blue, 0));
+Line 14511: setErrorPen(QPen(Qt::black));
+Line 14512: setBrush(Qt::NoBrush);
+Line 14513: setSelectedPen(QPen(QColor(80, 80, 255), 2.5));
+Line 14514: setSelectedBrush(Qt::NoBrush);
+Line 14816: disable any filling, set the brush to Qt::NoBrush.
+Line 14868: enabled to false before issuing a command like \ref QCustomPlot::savePng, and setting \a enabled
+Line 15002: Q_UNUSED(details)
+Line 15150: if (mBrush.style() != Qt::NoBrush)
+Line 15153: painter->fillRect(QRectF(rect.left(), rect.top()+rect.height()/2.0, rect.width(), rect.height()/3.0), mBrush);
+Line 15160: painter->drawLine(QLineF(rect.left(), rect.top()+rect.height()/2.0, rect.right()+5, rect.top()+rect.height()/2.0)); // +5 on x2 else last segment is missing from dashed/dotted pens
+Line 15170: scaledStyle.setPixmap(scaledStyle.pixmap().scaled(rect.size().toSize(), Qt::KeepAspectRatio, Qt::SmoothTransformation));
+Line 15172: scaledStyle.drawShape(painter, QRectF(rect).center());
+Line 15176: mScatterStyle.drawShape(painter, QRectF(rect).center());
+Line 15252: if (keyAxis->orientation() == Qt::Vertical)
+Line 15293: if (keyAxis->orientation() == Qt::Vertical)
+Line 15346: if (keyAxis->orientation() == Qt::Vertical)
+Line 15398: if (keyAxis->orientation() == Qt::Vertical)
+Line 15463: if (keyAxis->orientation() == Qt::Vertical)
+Line 15506: if (mainBrush().style() == Qt::NoBrush || mainBrush().color().alpha() == 0) return;
+Line 15513: painter->setPen(Qt::NoPen);
+Line 15515: painter->drawPolygon(QPolygonF(*lineData));
+Line 15520: painter->setPen(Qt::NoPen);
+Line 15546: if (keyAxis->orientation() == Qt::Vertical)
+Line 15560: if (keyAxis->orientation() == Qt::Vertical)
+Line 15585: if (mainPen().style() != Qt::NoPen && mainPen().color().alpha() != 0)
+Line 15589: painter->setBrush(Qt::NoBrush);
+Line 15608: painter->pen().style() == Qt::SolidLine &&
+Line 15660: if (mainPen().style() != Qt::NoPen && mainPen().color().alpha() != 0)
+Line 15664: pen.setCapStyle(Qt::FlatCap); // so impulse line doesn't reach beyond zero-line
+Line 15666: painter->setBrush(Qt::NoBrush);
+Line 15712: int reversedFactor = keyAxis->rangeReversed() != (keyAxis->orientation()==Qt::Vertical) ? -1 : 1; // is used to calculate keyEpsilon pixel into the correct direction
+Line 15713: int reversedRound = keyAxis->rangeReversed() != (keyAxis->orientation()==Qt::Vertical) ? 1 : 0; // is used to switch between floor (normal) and ceil (reversed) rounding of currentIntervalStartKey
+Line 15883: if (keyAxis->orientation() == Qt::Vertical)
+Line 15896: painter->drawLine(QLineF(x, a, x, y+skipSymbolMargin));
+Line 15898: painter->drawLine(QLineF(x, y-skipSymbolMargin, x, b));
+Line 15900: painter->drawLine(QLineF(x, a, x, b));
+Line 15902: painter->drawLine(QLineF(x-barWidthHalf, a, x+barWidthHalf, a));
+Line 15903: painter->drawLine(QLineF(x-barWidthHalf, b, x+barWidthHalf, b));
+Line 15915: painter->drawLine(QLineF(a, y, x-skipSymbolMargin, y));
+Line 15917: painter->drawLine(QLineF(x+skipSymbolMargin, y, b, y));
+Line 15919: painter->drawLine(QLineF(a, y, b, y));
+Line 15921: painter->drawLine(QLineF(a, y-barWidthHalf, a, y+barWidthHalf));
+Line 15922: painter->drawLine(QLineF(b, y-barWidthHalf, b, y+barWidthHalf));
+Line 15924: } else // mKeyAxis->orientation() is Qt::Horizontal
+Line 15937: painter->drawLine(QLineF(a, y, x-skipSymbolMargin, y));
+Line 15939: painter->drawLine(QLineF(x+skipSymbolMargin, y, b, y));
+Line 15941: painter->drawLine(QLineF(a, y, b, y));
+Line 15943: painter->drawLine(QLineF(a, y-barWidthHalf, a, y+barWidthHalf));
+Line 15944: painter->drawLine(QLineF(b, y-barWidthHalf, b, y+barWidthHalf));
+Line 15956: painter->drawLine(QLineF(x, a, x, y+skipSymbolMargin));
+Line 15958: painter->drawLine(QLineF(x, y-skipSymbolMargin, x, b));
+Line 15960: painter->drawLine(QLineF(x, a, x, b));
+Line 15962: painter->drawLine(QLineF(x-barWidthHalf, a, x+barWidthHalf, a));
+Line 15963: painter->drawLine(QLineF(x-barWidthHalf, b, x+barWidthHalf, b));
+Line 16048: if (mKeyAxis.data()->orientation() == Qt::Vertical)
+Line 16091: if (!keyAxis || !valueAxis) { qDebug() << Q_FUNC_INFO << "invalid key or value axis"; return QPointF(); }
+Line 16117: if (keyAxis->orientation() == Qt::Vertical)
+Line 16156: if (!keyAxis || !valueAxis) { qDebug() << Q_FUNC_INFO << "invalid key or value axis"; return QPointF(); }
+Line 16182: if (keyAxis->orientation() == Qt::Vertical)
+Line 16215: return QPolygonF();
+Line 16219: if (!keyAxis || !valueAxis) { qDebug() << Q_FUNC_INFO << "invalid key or value axis"; return QPolygonF(); }
+Line 16220: if (!mChannelFillGraph.data()->mKeyAxis) { qDebug() << Q_FUNC_INFO << "channel fill target key axis invalid"; return QPolygonF(); }
+Line 16223: return QPolygonF(); // don't have same axis orientation, can't fill that (Note: if keyAxis fits, valueAxis will fit too, because it's always orthogonal to keyAxis)
+Line 16225: if (lineData->isEmpty()) return QPolygonF();
+Line 16228: if (otherData.isEmpty()) return QPolygonF();
+Line 16239: if (keyAxis->orientation() == Qt::Horizontal)
+Line 16259: if (lowBound == -1) return QPolygonF(); // key ranges have no overlap
+Line 16263: if (croppedData->size() < 2) return QPolygonF(); // need at least two points for interpolation
+Line 16276: if (highBound == -1) return QPolygonF(); // key ranges have no overlap
+Line 16280: if (croppedData->size() < 2) return QPolygonF(); // need at least two points for interpolation
+Line 16288: } else // mKeyAxis->orientation() == Qt::Vertical
+Line 16310: if (lowBound == -1) return QPolygonF(); // key ranges have no overlap
+Line 16314: if (croppedData->size() < 2) return QPolygonF(); // need at least two points for interpolation
+Line 16327: if (highBound == -1) return QPolygonF(); // key ranges have no overlap
+Line 16331: if (croppedData->size() < 2) return QPolygonF(); // need at least two points for interpolation
+Line 16344: return QPolygonF(thisData);
+Line 16440: double currentDistSqr = QVector2D(coordsToPixels(scatterData.at(i).key, scatterData.at(i).value)-pixelPoint).lengthSquared();
+Line 16477: return QVector2D(lineData.at(0)-pixelPoint).length();
+Line 16808: (<tt>qQNaN()</tt> or <tt>std::numeric_limits<double>::quiet_NaN()</tt>) in between the two data points that shall be
+Line 16817: the plottable-interface of QCustomPlot applies (QCustomPlot::plottable, QCustomPlot::addPlottable, QCustomPlot::removePlottable, etc.)
+Line 16838: mPen.setColor(Qt::blue);
+Line 16839: mPen.setStyle(Qt::SolidLine);
+Line 16840: mBrush.setColor(Qt::blue);
+Line 16841: mBrush.setStyle(Qt::NoBrush);
+Line 16844: mSelectedPen.setColor(QColor(80, 80, 255)); // lighter than Qt::blue of mPen
+Line 17081: Q_UNUSED(details)
+Line 17115: if (mainBrush().style() != Qt::NoBrush && mainBrush().color().alpha() != 0)
+Line 17118: painter->setPen(Qt::NoPen);
+Line 17120: painter->drawPolygon(QPolygonF(*lineData));
+Line 17124: if (mLineStyle != lsNone && mainPen().style() != Qt::NoPen && mainPen().color().alpha() != 0)
+Line 17128: painter->setBrush(Qt::NoBrush);
+Line 17131: painter->pen().style() == Qt::SolidLine &&
+Line 17184: if (mBrush.style() != Qt::NoBrush)
+Line 17187: painter->fillRect(QRectF(rect.left(), rect.top()+rect.height()/2.0, rect.width(), rect.height()/3.0), mBrush);
+Line 17194: painter->drawLine(QLineF(rect.left(), rect.top()+rect.height()/2.0, rect.right()+5, rect.top()+rect.height()/2.0)); // +5 on x2 else last segment is missing from dashed/dotted pens
+Line 17204: scaledStyle.setPixmap(scaledStyle.pixmap().scaled(rect.size().toSize(), Qt::KeepAspectRatio, Qt::SmoothTransformation));
+Line 17206: scaledStyle.drawShape(painter, QRectF(rect).center());
+Line 17210: mScatterStyle.drawShape(painter, QRectF(rect).center());
+Line 17253: double rectLeft = keyAxis->pixelToCoord(keyAxis->coordToPixel(keyAxis->range().lower)-strokeMargin*((keyAxis->orientation()==Qt::Vertical)!=keyAxis->rangeReversed()?-1:1));
+Line 17254: double rectRight = keyAxis->pixelToCoord(keyAxis->coordToPixel(keyAxis->range().upper)+strokeMargin*((keyAxis->orientation()==Qt::Vertical)!=keyAxis->rangeReversed()?-1:1));
+Line 17255: double rectBottom = valueAxis->pixelToCoord(valueAxis->coordToPixel(valueAxis->range().lower)+strokeMargin*((valueAxis->orientation()==Qt::Horizontal)!=valueAxis->rangeReversed()?-1:1));
+Line 17256: double rectTop = valueAxis->pixelToCoord(valueAxis->coordToPixel(valueAxis->range().upper)-strokeMargin*((valueAxis->orientation()==Qt::Horizontal)!=valueAxis->rangeReversed()?-1:1));
+Line 17757: intersections.append(QPointF(key, rectBottom)); // direction will be taken care of at end of method
+Line 17758: intersections.append(QPointF(key, rectTop));
+Line 17762: intersections.append(QPointF(rectLeft, value)); // direction will be taken care of at end of method
+Line 17763: intersections.append(QPointF(rectRight, value));
+Line 17771: intersections.append(QPointF(gamma, rectTop));
+Line 17775: intersections.append(QPointF(gamma, rectBottom));
+Line 17780: intersections.append(QPointF(rectLeft, gamma));
+Line 17784: intersections.append(QPointF(rectRight, gamma));
+Line 17947: return QVector2D(dataPoint-pixelPoint).length();
+Line 18109: QObject(parentPlot),
+Line 18362: if (bars->keyAxis()->orientation() == Qt::Horizontal)
+Line 18441: (QCustomPlot::plottable, QCustomPlot::addPlottable, QCustomPlot::removePlottable, etc.)
+Line 18445: add it to the customPlot with QCustomPlot::addPlottable:
+Line 18487: mPen.setColor(Qt::blue);
+Line 18488: mPen.setStyle(Qt::SolidLine);
+Line 18489: mBrush.setColor(QColor(40, 50, 255, 30));
+Line 18490: mBrush.setStyle(Qt::SolidPattern);
+Line 18493: mSelectedPen.setColor(QColor(80, 80, 255)); // lighter than Qt::blue of mPen
+Line 18784: Q_UNUSED(details)
+Line 18818: if (mainBrush().style() != Qt::NoBrush && mainBrush().color().alpha() != 0)
+Line 18821: painter->setPen(Qt::NoPen);
+Line 18826: if (mainPen().style() != Qt::NoPen && mainPen().color().alpha() != 0)
+Line 18830: painter->setBrush(Qt::NoBrush);
+Line 18843: QRectF r = QRectF(0, 0, rect.width()*0.67, rect.height()*0.67);
+Line 18884: if (mKeyAxis.data()->orientation() == Qt::Horizontal)
+Line 18898: if (mKeyAxis.data()->orientation() == Qt::Horizontal)
+Line 18920: if (!keyAxis || !valueAxis) { qDebug() << Q_FUNC_INFO << "invalid key or value axis"; return QPolygonF(); }
+Line 18931: if (keyAxis->orientation() == Qt::Horizontal)
+Line 18933: result << QPointF(keyPixel+lowerPixelWidth, basePixel);
+Line 18934: result << QPointF(keyPixel+lowerPixelWidth, valuePixel);
+Line 18935: result << QPointF(keyPixel+upperPixelWidth, valuePixel);
+Line 18936: result << QPointF(keyPixel+upperPixelWidth, basePixel);
+Line 18939: result << QPointF(basePixel, keyPixel+lowerPixelWidth);
+Line 18940: result << QPointF(valuePixel, keyPixel+lowerPixelWidth);
+Line 18941: result << QPointF(valuePixel, keyPixel+upperPixelWidth);
+Line 18942: result << QPointF(basePixel, keyPixel+upperPixelWidth);
+Line 18964: if (mKeyAxis && (mKeyAxis.data()->rangeReversed() ^ (mKeyAxis.data()->orientation() == Qt::Vertical)))
+Line 18972: if (mKeyAxis.data()->orientation() == Qt::Horizontal)
+Line 18977: if (mKeyAxis && (mKeyAxis.data()->rangeReversed() ^ (mKeyAxis.data()->orientation() == Qt::Vertical)))
+Line 19185: If the whisker backbone pen is changed, make sure to set the capStyle to Qt::FlatCap. Else, the
+Line 19207: The constructed statistical box can be added to the plot with QCustomPlot::addPlottable,
+Line 19214: mLowerQuartile(0),
+Line 19216: mUpperQuartile(0),
+Line 19223: setPen(QPen(Qt::black));
+Line 19224: setSelectedPen(QPen(Qt::blue, 2.5));
+Line 19225: setMedianPen(QPen(Qt::black, 3, Qt::SolidLine, Qt::FlatCap));
+Line 19226: setWhiskerPen(QPen(Qt::black, 0, Qt::DashLine, Qt::FlatCap));
+Line 19227: setWhiskerBarPen(QPen(Qt::black));
+Line 19228: setBrush(Qt::NoBrush);
+Line 19229: setSelectedBrush(Qt::NoBrush);
+Line 19319: setLowerQuartile(lowerQuartile);
+Line 19321: setUpperQuartile(upperQuartile);
+Line 19348: Make sure to set the \a pen capStyle to Qt::FlatCap to prevent the whisker backbone from reaching
+Line 19393: setLowerQuartile(0);
+Line 19395: setUpperQuartile(0);
+Line 19402: Q_UNUSED(details)
+Line 19441: drawQuartileBox(painter, &quartileBox);
+Line 19444: painter->setClipRect(quartileBox, Qt::IntersectClip);
+Line 19459: QRectF r = QRectF(0, 0, rect.width()*0.67, rect.height()*0.67);
+Line 20044: (QCustomPlot::plottable, QCustomPlot::addPlottable, QCustomPlot::removePlottable, etc.)
+Line 20301: scaling algorithm (Qt::FastTransformation) or by a slower, higher quality algorithm
+Line 20302: (Qt::SmoothTransformation).
+Line 20317: bool mirrorX = (keyAxis()->orientation() == Qt::Horizontal ? keyAxis() : valueAxis())->rangeReversed();
+Line 20318: bool mirrorY = (valueAxis()->orientation() == Qt::Vertical ? valueAxis() : keyAxis())->rangeReversed();
+Line 20319: mLegendIcon = QPixmap::fromImage(mMapImage.mirrored(mirrorX, mirrorY)).scaled(thumbSize, Qt::KeepAspectRatio, transformMode);
+Line 20335: Q_UNUSED(details)
+Line 20360: QPainter::drawImage bug which makes inner pixel boundaries jitter when stretch-drawing images
+Line 20376: if (keyAxis->orientation() == Qt::Horizontal && (mMapImage.width() != keySize*keyOversamplingFactor || mMapImage.height() != valueSize*valueOversamplingFactor))
+Line 20377: mMapImage = QImage(QSize(keySize*keyOversamplingFactor, valueSize*valueOversamplingFactor), QImage::Format_RGB32);
+Line 20378: else if (keyAxis->orientation() == Qt::Vertical && (mMapImage.width() != valueSize*valueOversamplingFactor || mMapImage.height() != keySize*keyOversamplingFactor))
+Line 20379: mMapImage = QImage(QSize(valueSize*valueOversamplingFactor, keySize*keyOversamplingFactor), QImage::Format_RGB32);
+Line 20385: if (keyAxis->orientation() == Qt::Horizontal && (mUndersampledMapImage.width() != keySize || mUndersampledMapImage.height() != valueSize))
+Line 20386: mUndersampledMapImage = QImage(QSize(keySize, valueSize), QImage::Format_RGB32);
+Line 20387: else if (keyAxis->orientation() == Qt::Vertical && (mUndersampledMapImage.width() != valueSize || mUndersampledMapImage.height() != keySize))
+Line 20388: mUndersampledMapImage = QImage(QSize(valueSize, keySize), QImage::Format_RGB32);
+Line 20391: mUndersampledMapImage = QImage(); // don't need oversampling mechanism anymore (map size has changed) but mUndersampledMapImage still has nonzero size, free it
+Line 20394: if (keyAxis->orientation() == Qt::Horizontal)
+Line 20403: } else // keyAxis->orientation() == Qt::Vertical
+Line 20416: if (keyAxis->orientation() == Qt::Horizontal)
+Line 20417: mMapImage = mUndersampledMapImage.scaled(keySize*keyOversamplingFactor, valueSize*valueOversamplingFactor, Qt::IgnoreAspectRatio, Qt::FastTransformation);
+Line 20419: mMapImage = mUndersampledMapImage.scaled(valueSize*valueOversamplingFactor, keySize*keyOversamplingFactor, Qt::IgnoreAspectRatio, Qt::FastTransformation);
+Line 20444: mapBuffer = QPixmap((mapBufferTarget.size()*mapBufferPixelRatio).toSize());
+Line 20445: mapBuffer.fill(Qt::transparent);
+Line 20451: QRectF imageRect = QRectF(coordsToPixels(mMapData->keyRange().lower, mMapData->valueRange().lower),
+Line 20456: if (keyAxis()->orientation() == Qt::Horizontal)
+Line 20462: } else // keyAxis orientation is Qt::Vertical
+Line 20470: bool mirrorX = (keyAxis()->orientation() == Qt::Horizontal ? keyAxis() : valueAxis())->rangeReversed();
+Line 20471: bool mirrorY = (valueAxis()->orientation() == Qt::Vertical ? valueAxis() : keyAxis())->rangeReversed();
+Line 20472: bool smoothBackup = localPainter->renderHints().testFlag(QPainter::SmoothPixmapTransform);
+Line 20473: localPainter->setRenderHint(QPainter::SmoothPixmapTransform, mInterpolate);
+Line 20478: QRectF tightClipRect = QRectF(coordsToPixels(mMapData->keyRange().lower, mMapData->valueRange().lower),
+Line 20480: localPainter->setClipRect(tightClipRect, Qt::IntersectClip);
+Line 20485: localPainter->setRenderHint(QPainter::SmoothPixmapTransform, smoothBackup);
+Line 20501: QPixmap scaledIcon = mLegendIcon.scaled(rect.size().toSize(), Qt::KeepAspectRatio, Qt::FastTransformation);
+Line 20502: QRectF iconRect = QRectF(0, 0, scaledIcon.width(), scaledIcon.height());
+Line 20508: painter->setBrush(Qt::NoBrush);
+Line 20509: painter->setPen(Qt::black);
+Line 20665: mBrushPositive(QBrush(QColor(210, 210, 255))),
+Line 20666: mBrushNegative(QBrush(QColor(255, 210, 210))),
+Line 20667: mPenPositive(QPen(QColor(10, 40, 180))),
+Line 20668: mPenNegative(QPen(QColor(180, 40, 10)))
+Line 20672: setSelectedPen(QPen(QColor(80, 80, 255), 2.5));
+Line 20673: setSelectedBrush(QBrush(QColor(80, 80, 255)));
+Line 20950: Q_UNUSED(details)
+Line 21056: painter->setClipRegion(QRegion(QPolygon() << rect.bottomLeft().toPoint() << rect.topRight().toPoint() << rect.topLeft().toPoint()));
+Line 21057: painter->drawLine(QLineF(0, rect.height()*0.5, rect.width(), rect.height()*0.5).translated(rect.topLeft()));
+Line 21058: painter->drawLine(QLineF(rect.width()*0.2, rect.height()*0.3, rect.width()*0.2, rect.height()*0.5).translated(rect.topLeft()));
+Line 21059: painter->drawLine(QLineF(rect.width()*0.8, rect.height()*0.5, rect.width()*0.8, rect.height()*0.7).translated(rect.topLeft()));
+Line 21063: painter->setClipRegion(QRegion(QPolygon() << rect.bottomLeft().toPoint() << rect.topRight().toPoint() << rect.bottomRight().toPoint()));
+Line 21064: painter->drawLine(QLineF(0, rect.height()*0.5, rect.width(), rect.height()*0.5).translated(rect.topLeft()));
+Line 21065: painter->drawLine(QLineF(rect.width()*0.2, rect.height()*0.3, rect.width()*0.2, rect.height()*0.5).translated(rect.topLeft()));
+Line 21066: painter->drawLine(QLineF(rect.width()*0.8, rect.height()*0.5, rect.width()*0.8, rect.height()*0.7).translated(rect.topLeft()));
+Line 21071: painter->drawLine(QLineF(0, rect.height()*0.5, rect.width(), rect.height()*0.5).translated(rect.topLeft()));
+Line 21072: painter->drawLine(QLineF(rect.width()*0.2, rect.height()*0.3, rect.width()*0.2, rect.height()*0.5).translated(rect.topLeft()));
+Line 21073: painter->drawLine(QLineF(rect.width()*0.8, rect.height()*0.5, rect.width()*0.8, rect.height()*0.7).translated(rect.topLeft()));
+Line 21082: painter->setClipRegion(QRegion(QPolygon() << rect.bottomLeft().toPoint() << rect.topRight().toPoint() << rect.topLeft().toPoint()));
+Line 21083: painter->drawLine(QLineF(0, rect.height()*0.5, rect.width()*0.25, rect.height()*0.5).translated(rect.topLeft()));
+Line 21084: painter->drawLine(QLineF(rect.width()*0.75, rect.height()*0.5, rect.width(), rect.height()*0.5).translated(rect.topLeft()));
+Line 21085: painter->drawRect(QRectF(rect.width()*0.25, rect.height()*0.25, rect.width()*0.5, rect.height()*0.5).translated(rect.topLeft()));
+Line 21089: painter->setClipRegion(QRegion(QPolygon() << rect.bottomLeft().toPoint() << rect.topRight().toPoint() << rect.bottomRight().toPoint()));
+Line 21090: painter->drawLine(QLineF(0, rect.height()*0.5, rect.width()*0.25, rect.height()*0.5).translated(rect.topLeft()));
+Line 21091: painter->drawLine(QLineF(rect.width()*0.75, rect.height()*0.5, rect.width(), rect.height()*0.5).translated(rect.topLeft()));
+Line 21092: painter->drawRect(QRectF(rect.width()*0.25, rect.height()*0.25, rect.width()*0.5, rect.height()*0.5).translated(rect.topLeft()));
+Line 21097: painter->drawLine(QLineF(0, rect.height()*0.5, rect.width()*0.25, rect.height()*0.5).translated(rect.topLeft()));
+Line 21098: painter->drawLine(QLineF(rect.width()*0.75, rect.height()*0.5, rect.width(), rect.height()*0.5).translated(rect.topLeft()));
+Line 21099: painter->drawRect(QRectF(rect.width()*0.25, rect.height()*0.25, rect.width()*0.5, rect.height()*0.5).translated(rect.topLeft()));
+Line 21199: if (keyAxis->orientation() == Qt::Horizontal)
+Line 21214: painter->drawLine(QPointF(keyPixel, valueAxis->coordToPixel(it.value().high)), QPointF(keyPixel, valueAxis->coordToPixel(it.value().low)));
+Line 21217: painter->drawLine(QPointF(keyPixel-keyWidthPixels, openPixel), QPointF(keyPixel, openPixel));
+Line 21219: painter->drawLine(QPointF(keyPixel, closePixel), QPointF(keyPixel+keyWidthPixels, closePixel));
+Line 21236: painter->drawLine(QPointF(valueAxis->coordToPixel(it.value().high), keyPixel), QPointF(valueAxis->coordToPixel(it.value().low), keyPixel));
+Line 21239: painter->drawLine(QPointF(openPixel, keyPixel-keyWidthPixels), QPointF(openPixel, keyPixel));
+Line 21241: painter->drawLine(QPointF(closePixel, keyPixel), QPointF(closePixel, keyPixel+keyWidthPixels));
+Line 21261: if (keyAxis->orientation() == Qt::Horizontal)
+Line 21291: painter->drawLine(QPointF(keyPixel, valueAxis->coordToPixel(it.value().high)), QPointF(keyPixel, valueAxis->coordToPixel(qMax(it.value().open, it.value().close))));
+Line 21293: painter->drawLine(QPointF(keyPixel, valueAxis->coordToPixel(it.value().low)), QPointF(keyPixel, valueAxis->coordToPixel(qMin(it.value().open, it.value().close))));
+Line 21296: painter->drawRect(QRectF(QPointF(keyPixel-keyWidthPixels, closePixel), QPointF(keyPixel+keyWidthPixels, openPixel)));
+Line 21298: } else // keyAxis->orientation() == Qt::Vertical
+Line 21328: painter->drawLine(QPointF(valueAxis->coordToPixel(it.value().high), keyPixel), QPointF(valueAxis->coordToPixel(qMax(it.value().open, it.value().close)), keyPixel));
+Line 21330: painter->drawLine(QPointF(valueAxis->coordToPixel(it.value().low), keyPixel), QPointF(valueAxis->coordToPixel(qMin(it.value().open, it.value().close)), keyPixel));
+Line 21333: painter->drawRect(QRectF(QPointF(closePixel, keyPixel-keyWidthPixels), QPointF(openPixel, keyPixel+keyWidthPixels)));
+Line 21351: if (keyAxis->orientation() == Qt::Horizontal)
+Line 21357: double currentDistSqr = distSqrToLine(QPointF(keyPixel, valueAxis->coordToPixel(it.value().high)), QPointF(keyPixel, valueAxis->coordToPixel(it.value().low)), pos);
+Line 21361: } else // keyAxis->orientation() == Qt::Vertical
+Line 21367: double currentDistSqr = distSqrToLine(QPointF(valueAxis->coordToPixel(it.value().high), keyPixel), QPointF(valueAxis->coordToPixel(it.value().low), keyPixel), pos);
+Line 21389: if (keyAxis->orientation() == Qt::Horizontal)
+Line 21406: double highLineDistSqr = distSqrToLine(QPointF(keyPixel, valueAxis->coordToPixel(it.value().high)), QPointF(keyPixel, valueAxis->coordToPixel(qMax(it.value().open, it.value().close))), pos);
+Line 21407: double lowLineDistSqr = distSqrToLine(QPointF(keyPixel, valueAxis->coordToPixel(it.value().low)), QPointF(keyPixel, valueAxis->coordToPixel(qMin(it.value().open, it.value().close))), pos);
+Line 21413: } else // keyAxis->orientation() == Qt::Vertical
+Line 21430: double highLineDistSqr = distSqrToLine(QPointF(valueAxis->coordToPixel(it.value().high), keyPixel), QPointF(valueAxis->coordToPixel(qMax(it.value().open, it.value().close)), keyPixel), pos);
+Line 21431: double lowLineDistSqr = distSqrToLine(QPointF(valueAxis->coordToPixel(it.value().low), keyPixel), QPointF(valueAxis->coordToPixel(qMin(it.value().open, it.value().close)), keyPixel), pos);
+Line 21493: The constructed item can be added to the plot with QCustomPlot::addItem.
+Line 21497: point1(createPosition(QLatin1String("point1"))),
+Line 21498: point2(createPosition(QLatin1String("point2")))
+Line 21503: setPen(QPen(Qt::black));
+Line 21504: setSelectedPen(QPen(Qt::blue,2));
+Line 21534: Q_UNUSED(details)
+Line 21538: return distToStraightLine(QVector2D(point1->pixelPoint()), QVector2D(point2->pixelPoint()-point1->pixelPoint()), QVector2D(pos));
+Line 21607: pointVectors.append(QVector2D(bx+gamma, by));
+Line 21613: pointVectors.append(QVector2D(bx+gamma, by));
+Line 21619: pointVectors.append(QVector2D(bx, by+gamma));
+Line 21625: pointVectors.append(QVector2D(bx, by+gamma));
+Line 21683: The constructed item can be added to the plot with QCustomPlot::addItem.
+Line 21687: start(createPosition(QLatin1String("start"))),
+Line 21688: end(createPosition(QLatin1String("end")))
+Line 21693: setPen(QPen(Qt::black));
+Line 21694: setSelectedPen(QPen(Qt::blue,2));
+Line 21750: Q_UNUSED(details)
+Line 21773: painter->setBrush(Qt::SolidPattern);
+Line 21793: return QLineF(start.toPointF(), end.toPointF());
+Line 21812: pointVectors.append(QVector2D(bx+gamma, by));
+Line 21822: pointVectors.append(QVector2D(bx+gamma, by));
+Line 21835: pointVectors.append(QVector2D(bx, by+gamma));
+Line 21845: pointVectors.append(QVector2D(bx, by+gamma));
+Line 21916: The constructed item can be added to the plot with QCustomPlot::addItem.
+Line 21920: start(createPosition(QLatin1String("start"))),
+Line 21921: startDir(createPosition(QLatin1String("startDir"))),
+Line 21922: endDir(createPosition(QLatin1String("endDir"))),
+Line 21923: end(createPosition(QLatin1String("end")))
+Line 21930: setPen(QPen(Qt::black));
+Line 21931: setSelectedPen(QPen(Qt::blue,2));
+Line 21987: Q_UNUSED(details)
+Line 22017: if (QVector2D(endVec-startVec).length() > 1e10f) // too large curves cause crash
+Line 22032: painter->setBrush(Qt::SolidPattern);
+Line 22034: mTail.draw(painter, QVector2D(startVec), M_PI-cubicPath.angleAtPercent(0)/180.0*M_PI);
+Line 22036: mHead.draw(painter, QVector2D(endVec), -cubicPath.angleAtPercent(1)/180.0*M_PI);
+Line 22066: The constructed item can be added to the plot with QCustomPlot::addItem.
+Line 22070: topLeft(createPosition(QLatin1String("topLeft"))),
+Line 22071: bottomRight(createPosition(QLatin1String("bottomRight"))),
+Line 22072: top(createAnchor(QLatin1String("top"), aiTop)),
+Line 22073: topRight(createAnchor(QLatin1String("topRight"), aiTopRight)),
+Line 22074: right(createAnchor(QLatin1String("right"), aiRight)),
+Line 22075: bottom(createAnchor(QLatin1String("bottom"), aiBottom)),
+Line 22076: bottomLeft(createAnchor(QLatin1String("bottomLeft"), aiBottomLeft)),
+Line 22077: left(createAnchor(QLatin1String("left"), aiLeft))
+Line 22082: setPen(QPen(Qt::black));
+Line 22083: setSelectedPen(QPen(Qt::blue,2));
+Line 22084: setBrush(Qt::NoBrush);
+Line 22085: setSelectedBrush(Qt::NoBrush);
+Line 22114: Qt::NoBrush.
+Line 22125: brush to Qt::NoBrush.
+Line 22137: Q_UNUSED(details)
+Line 22141: QRectF rect = QRectF(topLeft->pixelPoint(), bottomRight->pixelPoint()).normalized();
+Line 22142: bool filledRect = mBrush.style() != Qt::NoBrush && mBrush.color().alpha() != 0;
+Line 22153: QRectF rect = QRectF(p1, p2).normalized();
+Line 22167: QRectF rect = QRectF(topLeft->pixelPoint(), bottomRight->pixelPoint());
+Line 22179: return QPointF();
+Line 22224: The constructed item can be added to the plot with QCustomPlot::addItem.
+Line 22228: position(createPosition(QLatin1String("position"))),
+Line 22229: topLeft(createAnchor(QLatin1String("topLeft"), aiTopLeft)),
+Line 22230: top(createAnchor(QLatin1String("top"), aiTop)),
+Line 22231: topRight(createAnchor(QLatin1String("topRight"), aiTopRight)),
+Line 22232: right(createAnchor(QLatin1String("right"), aiRight)),
+Line 22233: bottomRight(createAnchor(QLatin1String("bottomRight"), aiBottomRight)),
+Line 22234: bottom(createAnchor(QLatin1String("bottom"), aiBottom)),
+Line 22235: bottomLeft(createAnchor(QLatin1String("bottomLeft"), aiBottomLeft)),
+Line 22236: left(createAnchor(QLatin1String("left"), aiLeft))
+Line 22241: setTextAlignment(Qt::AlignTop|Qt::AlignHCenter);
+Line 22242: setPositionAlignment(Qt::AlignCenter);
+Line 22243: setText(QLatin1String("text"));
+Line 22245: setPen(Qt::NoPen);
+Line 22246: setSelectedPen(Qt::NoPen);
+Line 22247: setBrush(Qt::NoBrush);
+Line 22248: setSelectedBrush(Qt::NoBrush);
+Line 22249: setColor(Qt::black);
+Line 22250: setSelectedColor(Qt::blue);
+Line 22275: border, set \a pen to Qt::NoPen.
+Line 22286: selected. To disable the border, set \a pen to Qt::NoPen.
+Line 22297: background, set \a brush to Qt::NoBrush.
+Line 22308: background, set \a brush to Qt::NoBrush.
+Line 22352: \li If \a alignment is <tt>Qt::AlignHCenter | Qt::AlignTop</tt>, the text will be positioned such
+Line 22354: \li If \a alignment is <tt>Qt::AlignLeft | Qt::AlignBottom</tt>, \a position will indicate the
+Line 22366: Controls how (multi-lined) text is aligned inside the text rect (typically Qt::AlignLeft, Qt::AlignCenter or Qt::AlignRight).
+Line 22394: Q_UNUSED(details)
+Line 22407: QRect textRect = fontMetrics.boundingRect(0, 0, 0, 0, Qt::TextDontClip|mTextAlignment, mText);
+Line 22424: QRect textRect = painter->fontMetrics().boundingRect(0, 0, 0, 0, Qt::TextDontClip|mTextAlignment, mText);
+Line 22426: QPointF textPos = getTextDrawPoint(QPointF(0, 0), textBoxRect, mPositionAlignment); // 0, 0 because the transform does the translation
+Line 22427: textRect.moveTopLeft(textPos.toPoint()+QPoint(mPadding.left(), mPadding.top()));
+Line 22434: if ((mainBrush().style() != Qt::NoBrush && mainBrush().color().alpha() != 0) ||
+Line 22435: (mainPen().style() != Qt::NoPen && mainPen().color().alpha() != 0))
+Line 22441: painter->setBrush(Qt::NoBrush);
+Line 22442: painter->setPen(QPen(mainColor()));
+Line 22443: painter->drawText(textRect, Qt::TextDontClip|mTextAlignment, mText);
+Line 22457: QRect textRect = fontMetrics.boundingRect(0, 0, 0, 0, Qt::TextDontClip|mTextAlignment, mText);
+Line 22459: QPointF textPos = getTextDrawPoint(QPointF(0, 0), textBoxRect, mPositionAlignment); // 0, 0 because the transform does the translation
+Line 22461: QPolygonF rectPoly = transform.map(QPolygonF(textBoxRect));
+Line 22476: return QPointF();
+Line 22481: Returns the point that must be given to the QPainter::drawText function (which expects the top
+Line 22485: For example, if \a positionAlignment is <tt>Qt::AlignLeft | Qt::AlignBottom</tt> the returned point
+Line 22491: if (positionAlignment == 0 || positionAlignment == (Qt::AlignLeft|Qt::AlignTop))
+Line 22495: if (positionAlignment.testFlag(Qt::AlignHCenter))
+Line 22497: else if (positionAlignment.testFlag(Qt::AlignRight))
+Line 22499: if (positionAlignment.testFlag(Qt::AlignVCenter))
+Line 22501: else if (positionAlignment.testFlag(Qt::AlignBottom))
+Line 22562: The constructed item can be added to the plot with QCustomPlot::addItem.
+Line 22566: topLeft(createPosition(QLatin1String("topLeft"))),
+Line 22567: bottomRight(createPosition(QLatin1String("bottomRight"))),
+Line 22568: topLeftRim(createAnchor(QLatin1String("topLeftRim"), aiTopLeftRim)),
+Line 22569: top(createAnchor(QLatin1String("top"), aiTop)),
+Line 22570: topRightRim(createAnchor(QLatin1String("topRightRim"), aiTopRightRim)),
+Line 22571: right(createAnchor(QLatin1String("right"), aiRight)),
+Line 22572: bottomRightRim(createAnchor(QLatin1String("bottomRightRim"), aiBottomRightRim)),
+Line 22573: bottom(createAnchor(QLatin1String("bottom"), aiBottom)),
+Line 22574: bottomLeftRim(createAnchor(QLatin1String("bottomLeftRim"), aiBottomLeftRim)),
+Line 22575: left(createAnchor(QLatin1String("left"), aiLeft)),
+Line 22576: center(createAnchor(QLatin1String("center"), aiCenter))
+Line 22581: setPen(QPen(Qt::black));
+Line 22582: setSelectedPen(QPen(Qt::blue, 2));
+Line 22583: setBrush(Qt::NoBrush);
+Line 22584: setSelectedBrush(Qt::NoBrush);
+Line 22613: Qt::NoBrush.
+Line 22624: brush to Qt::NoBrush.
+Line 22636: Q_UNUSED(details)
+Line 22653: if (result > mParentPlot->selectionTolerance()*0.99 && mBrush.style() != Qt::NoBrush && mBrush.color().alpha() != 0)
+Line 22668: QRectF ellipseRect = QRectF(p1, p2).normalized();
+Line 22692: QRectF rect = QRectF(topLeft->pixelPoint(), bottomRight->pixelPoint());
+Line 22707: return QPointF();
+Line 22752: The constructed item can be added to the plot with QCustomPlot::addItem.
+Line 22756: topLeft(createPosition(QLatin1String("topLeft"))),
+Line 22757: bottomRight(createPosition(QLatin1String("bottomRight"))),
+Line 22758: top(createAnchor(QLatin1String("top"), aiTop)),
+Line 22759: topRight(createAnchor(QLatin1String("topRight"), aiTopRight)),
+Line 22760: right(createAnchor(QLatin1String("right"), aiRight)),
+Line 22761: bottom(createAnchor(QLatin1String("bottom"), aiBottom)),
+Line 22762: bottomLeft(createAnchor(QLatin1String("bottomLeft"), aiBottomLeft)),
+Line 22763: left(createAnchor(QLatin1String("left"), aiLeft)),
+Line 22769: setPen(Qt::NoPen);
+Line 22770: setSelectedPen(QPen(Qt::blue));
+Line 22771: setScaled(false, Qt::KeepAspectRatio, Qt::SmoothTransformation);
+Line 22824: Q_UNUSED(details)
+Line 22837: double clipPad = mainPen().style() == Qt::NoPen ? 0 : mainPen().widthF();
+Line 22844: if (pen.style() != Qt::NoPen)
+Line 22847: painter->setBrush(Qt::NoBrush);
+Line 22877: return QPointF();
+Line 22906: mScaledPixmap = QPixmap::fromImage(mScaledPixmap.toImage().mirrored(flipHorz, flipVert));
+Line 22909: mScaledPixmap = QPixmap();
+Line 22935: return QRect(p1, QSize(0, 0));
+Line 22938: QSize newSize = QSize(p2.x()-p1.x(), p2.y()-p1.y());
+Line 22954: result = QRect(topLeft, scaledSize);
+Line 22957: result = QRect(p1, mPixmap.size());
+Line 23014: The constructed item can be added to the plot with QCustomPlot::addItem.
+Line 23018: position(createPosition(QLatin1String("position"))),
+Line 23023: setBrush(Qt::NoBrush);
+Line 23024: setSelectedBrush(Qt::NoBrush);
+Line 23025: setPen(QPen(Qt::black));
+Line 23026: setSelectedPen(QPen(Qt::blue, 2));
+Line 23158: Q_UNUSED(details)
+Line 23170: if (clipRect().intersects(QRectF(center-QPointF(w, w), center+QPointF(w, w)).toRect()))
+Line 23171: return qSqrt(qMin(distSqrToLine(center+QPointF(-w, 0), center+QPointF(w, 0), pos),
+Line 23172: distSqrToLine(center+QPointF(0, -w), center+QPointF(0, w), pos)));
+Line 23177: return qSqrt(qMin(distSqrToLine(QPointF(clip.left(), center.y()), QPointF(clip.right(), center.y()), pos),
+Line 23178: distSqrToLine(QPointF(center.x(), clip.top()), QPointF(center.x(), clip.bottom()), pos)));
+Line 23182: if (clip.intersects(QRectF(center-QPointF(w, w), center+QPointF(w, w)).toRect()))
+Line 23185: double centerDist = QVector2D(center-pos).length();
+Line 23189: if (result > mParentPlot->selectionTolerance()*0.99 && mBrush.style() != Qt::NoBrush && mBrush.color().alpha() != 0)
+Line 23200: if (clip.intersects(QRectF(center-QPointF(w, w), center+QPointF(w, w)).toRect()))
+Line 23202: QRectF rect = QRectF(center-QPointF(w, w), center+QPointF(w, w));
+Line 23203: bool filledRect = mBrush.style() != Qt::NoBrush && mBrush.color().alpha() != 0;
+Line 23229: if (clip.intersects(QRectF(center-QPointF(w, w), center+QPointF(w, w)).toRect()))
+Line 23231: painter->drawLine(QLineF(center+QPointF(-w, 0), center+QPointF(w, 0)));
+Line 23232: painter->drawLine(QLineF(center+QPointF(0, -w), center+QPointF(0, w)));
+Line 23239: painter->drawLine(QLineF(clip.left(), center.y(), clip.right(), center.y()));
+Line 23241: painter->drawLine(QLineF(center.x(), clip.top(), center.x(), clip.bottom()));
+Line 23246: if (clip.intersects(QRectF(center-QPointF(w, w), center+QPointF(w, w)).toRect()))
+Line 23252: if (clip.intersects(QRectF(center-QPointF(w, w), center+QPointF(w, w)).toRect()))
+Line 23253: painter->drawRect(QRectF(center-QPointF(w, w), center+QPointF(w, w)));
+Line 23367: The constructed item can be added to the plot with QCustomPlot::addItem.
+Line 23371: left(createPosition(QLatin1String("left"))),
+Line 23372: right(createPosition(QLatin1String("right"))),
+Line 23373: center(createAnchor(QLatin1String("center"), aiCenter))
+Line 23378: setPen(QPen(Qt::black));
+Line 23379: setSelectedPen(QPen(Qt::blue, 2));
+Line 23438: Q_UNUSED(details)
+Line 23506: painter->setBrush(Qt::NoBrush);
+Line 23516: painter->setBrush(Qt::NoBrush);
+Line 23526: painter->setPen(Qt::NoPen);
+Line 23527: painter->setBrush(QBrush(mainPen().color()));
+Line 23563: return QPointF();
